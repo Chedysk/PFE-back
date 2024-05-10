@@ -34,7 +34,7 @@ public class ProfessorController
 	private WishlistService wishlistService;
 
 	@GetMapping("/professorlist")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Professor>> getProfessorList() throws Exception
 	{
 		List<Professor> professors = professorService.getAllProfessors();
@@ -42,7 +42,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/youtubecourselist")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Course>> getYoutubeCourseList() throws Exception
 	{
 		List<Course> youtubeCourseList = courseService.fetchByCoursetype("Youtube");
@@ -54,7 +54,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/websitecourselist")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Course>> getWebsiteCourseList() throws Exception
 	{
 		List<Course> websiteCourseList = courseService.fetchByCoursetype("Website");
@@ -62,7 +62,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/courselistbyname/{coursename}")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Course>> getCourseListByName(@PathVariable String coursename) throws Exception
 	{
 		Course courseList = courseService.fetchCourseByCoursename(coursename);
@@ -73,7 +73,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/professorlistbyemail/{email}")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Professor>> getProfessorListByEmail(@PathVariable String email) throws Exception
 	{
 		List<Professor> professors = professorService.getProfessorsByEmail(email);
@@ -81,7 +81,7 @@ public class ProfessorController
 	}
 
 	@PostMapping("/addProfessor")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public Professor addNewProfessor(@RequestBody Professor professor) throws Exception
 	{
 		Professor professorObj = null;
@@ -93,7 +93,7 @@ public class ProfessorController
 	}
 
 	@PostMapping("/addCourse")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public Course addNewCourse(@RequestBody Course course) throws Exception
 	{
 		Course courseObj = null;
@@ -105,7 +105,7 @@ public class ProfessorController
 	}
 
 	@PostMapping("/addnewchapter")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public Chapter addNewChapters(@RequestBody Chapter chapter) throws Exception
 	{
 		Chapter chapterObj = null;
@@ -114,7 +114,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/acceptstatus/{email}")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<String>> updateStatus(@PathVariable String email) throws Exception
 	{
 		professorService.updateStatus(email);
@@ -124,7 +124,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/rejectstatus/{email}")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<String>> rejectStatus(@PathVariable String email) throws Exception
 	{
 		professorService.rejectStatus(email);
@@ -134,7 +134,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/professorprofileDetails/{email}")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Professor>> getProfileDetails(@PathVariable String email) throws Exception
 	{
 		List<Professor> professors = professorService.fetchProfileByEmail(email);
@@ -142,7 +142,7 @@ public class ProfessorController
 	}
 
 	@PutMapping("/updateprofessor")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<Professor> updateProfessorProfile(@RequestBody Professor professor) throws Exception
 	{
 		Professor professorobj = professorService.updateProfessorProfile(professor);
@@ -150,7 +150,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/gettotalprofessors")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Integer>> getTotalProfessors() throws Exception
 	{
 		List<Professor> professors = professorService.getAllProfessors();
@@ -160,7 +160,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/gettotalchapters")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Integer>> getTotalChapters() throws Exception
 	{
 		List<Chapter> chapters = chapterService.getAllChapters();
@@ -170,7 +170,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/gettotalcourses")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Integer>> getTotalCourses() throws Exception
 	{
 		List<Course> courses = courseService.getAllCourses();
@@ -180,7 +180,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/gettotalwishlist")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<Integer>> getTotalWishlist() throws Exception
 	{
 		List<Wishlist> wishlists = wishlistService.getAllLikedCourses();
@@ -190,7 +190,7 @@ public class ProfessorController
 	}
 
 	@GetMapping("/getcoursenames")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<List<String>> getCourseNames() throws Exception
 	{
 		List<Course> courses = courseService.getAllCourses();

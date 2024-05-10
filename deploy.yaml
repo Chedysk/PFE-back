@@ -5,13 +5,13 @@
     - name: Copy YAML files from local machine to master machine
       copy:
         src: "{{ item }}"
-        dest: "/home/kmaster/{{ item }}"
+        dest: "/home/master/{{ item }}"
       loop:
         - mysql.yaml
         - back.yaml
 
     - name: Apply YAML files on master machine
-      command: kubectl apply -f "/home/kmaster/{{ item }}"
+      command: kubectl apply -f "/home/master/{{ item }}"
       loop:
         - mysql.yaml
         - back.yaml

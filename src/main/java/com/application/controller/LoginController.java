@@ -24,7 +24,7 @@ public class LoginController
 	}
 
 	@PostMapping("/loginuser")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public User loginUser(@RequestBody User user) throws Exception
 	{
 		String currEmail = user.getEmail();
@@ -43,7 +43,7 @@ public class LoginController
 	}
 
 	@PostMapping("/loginprofessor")
-	@CrossOrigin(origins = "http://192.168.65.129:30001")
+	@CrossOrigin(origins = "*")
 	public Professor loginDoctor(@RequestBody Professor professor) throws Exception
 	{
 		String currEmail = professor.getEmail();

@@ -32,7 +32,7 @@ pipeline {
 
         stage('Build Docker Image - Backend') {
             steps {
-                sh 'docker build -t chedysk/backend .'
+                sh 'docker build -t chedysk/back .'
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'chedysk-dockerhub') {
-                        sh 'docker push chedysk/backend'
+                        sh 'docker push chedysk/back'
                     }
                 }
             }
