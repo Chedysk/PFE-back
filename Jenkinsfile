@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'master',
                     credentialsId: 'git-cred',
-                    url: 'https://github.com/Chedysk/PFE-Backend.git'
+                    url: 'https://github.com/Chedysk/PFE-back.git'
             }
         }
 
