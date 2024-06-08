@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: back-dep
-          image: chedysk/backend
+          image: chedysk/back
           ports:
             - containerPort: 8085
           env:

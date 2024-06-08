@@ -18,7 +18,7 @@ public class RegistrationController
 	private ProfessorService professorService;
 
 	@PostMapping("/registeruser")
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://13.69.74.84:30001")
 	public User registerUser(@RequestBody User user) throws Exception
 	{
 		String currEmail = user.getEmail();
@@ -39,7 +39,7 @@ public class RegistrationController
 	}
 
 	@PostMapping("/registerprofessor")
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://13.69.74.84:30001")
 	public Professor registerDoctor(@RequestBody Professor professor) throws Exception
 	{
 		String currEmail = professor.getEmail();
