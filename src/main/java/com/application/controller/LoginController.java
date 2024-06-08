@@ -24,7 +24,7 @@ public class LoginController
 	}
 
 	@PostMapping("/loginuser")
-	@CrossOrigin(origins = {"http://13.69.74.84:30001", "http://13.81.61.197:30001"})
+	@CrossOrigin(origins = "*")
 
 	public User loginUser(@RequestBody User user) throws Exception
 	{
@@ -44,7 +44,7 @@ public class LoginController
 	}
 
 	@PostMapping("/loginprofessor")
-	@CrossOrigin(origins = {"http://13.69.74.84:30001", "http://13.81.61.197:30001"})
+	@CrossOrigin(origins = "*")
 
 	public Professor loginDoctor(@RequestBody Professor professor) throws Exception
 	{
